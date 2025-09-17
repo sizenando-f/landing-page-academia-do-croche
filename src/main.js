@@ -13,3 +13,9 @@ const dataFormatada = hoje.toLocaleDateString("pt-BR", opcoesDeFormato);
 if (elementoData) {
   elementoData.textContent = dataFormatada;
 }
+
+const elementoData2 = document.getElementById("data-atual-2");
+
+if (elementoData2) {
+  elementoData2.textContent = dataFormatada;
+}
