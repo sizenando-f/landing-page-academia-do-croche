@@ -60,3 +60,66 @@ const testimonialSwiper = new Swiper(".testimonialSwiper", {
     prevEl: ".swiper-button-prev",
   },
 });
+
+//======================================================================
+// CÓDIGO DO TIMER DE CONTAGEM REGRESSIVA
+//======================================================================
+function startCountdown() {
+  const countdownElement = document.getElementById("countdown-timer");
+  if (!countdownElement) return; // Não faz nada se o elemento não existir
+
+  const interval = setInterval(() => {
+    const now = new Date();
+    const midnight = new Date(
+      now.getFullYear(),
+      now.getMonth(),
+      now.getDate() + 1
+    ); // Meia-noite de hoje
+    const diff = midnight - now;
+
+    if (diff <= 0) {
+      countdownElement.innerHTML = "00h 00m 00s";
+      clearInterval(interval);
+      return;
+    }
+
+    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+    countdownElement.innerHTML = `${String(hours).padStart(2, "0")}h ${String(
+      minutes
+    ).padStart(2, "0")}m ${String(seconds).padStart(2, "0")}s`;
+  }, 1000);
+}
+
+//======================================================================
+// INICIALIZAÇÃO DE TUDO QUANDO A PÁGINA CARREGA
+//======================================================================
+document.addEventListener("DOMContentLoaded", () => {
+  // Inicializa o carrossel (se você já tiver, não precisa duplicar)
+  const testimonialSwiper = new Swiper(".testimonialSwiper", {
+    loop: true,
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
+    slidesPerView: 1,
+    spaceBetween: 20,
+    breakpoints: {
+      768: { slidesPerView: 2, spaceBetween: 30 },
+      1024: { slidesPerView: 3, spaceBetween: 40 },
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+
+  // Inicializa o timer
+  startCountdown();
+});
