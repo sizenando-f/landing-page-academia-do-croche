@@ -7,446 +7,418 @@
     <link rel="stylesheet" href="/src/style.css" />
     <script type="module" src="/src/main.js" defer></script>
   </head>
-  <body class="bg-pink-50">
-    <main class="py-16 px-4 mx-auto flex flex-col gap-10">
-      <!-- Apresetação inicial com call to action -->
-      <div
-        class="max-w-4xl mx-auto flex flex-col items-center text-center gap-11"
-      >
-        <div>
-          <h1 class="text-3xl md:text-5xl font-extrabold">
-            <span class="text-pink-600"
-              >A MAIOR BIBLIOTECA DE CROCHÊ DO BRASIL</span
-            >
-            - MAIS DE 2.500 RECEITAS LUCRATIVAS EM UM ÚNICO LUGAR
-          </h1>
-
-          <p class="mt-4 text-lg md:text-2xl font-bold text-gray-700">
-            Transforme crochê em renda extra ou sua principal fonte de ganhos
-            com bolsas, roupas, amigurumis, biquínis, decoração e muito mais.
-            Tudo passo a passo, pronto para você aplicar ainda hoje.
-          </p>
-        </div>
-
-        <img
-          src="/src/images/capa-landing.jpg"
-          alt="Bolsas de crochê coloridas"
-          class="w-full object-cover rounded-2xl shadow-xl"
-        />
-        <div class="mx-auto flex flex-col gap-8">
-          <p class="font-extrabold leading-6 text-2xl">
-            <span class="text-red-600 line-through">DE R$79,90</span> <br />
-            POR APENAS <br />
-            <span class="text-green-500 text-7xl font-extrabold">R$10</span>
-          </p>
-          <a
-            href=""
-            class="bg-green-500 text-xl font-bold text-white rounded-lg border-black border-2 px-12 py-4 hover:bg-green-700 transition"
-            >QUERO APROVEITAR</a
-          >
-        </div>
-      </div>
-      <!-- Garantia -->
-      <div
-        class="max-w-4xl mx-auto flex flex-col items-center text-center gap-11"
-      >
-        <p class="underline">
-          ATÉ AS 23:59 DE HOJE: <span id="data-atual"></span>
-        </p>
-        <img
-          src="/src/images/site-seguro.webp"
-          alt=""
-          class="w-80 md:w-full object-cover rounded-2xl shadow-xl"
-        />
-        <img
-          src="/src/images/selo-garantia.webp"
-          alt=""
-          class="w-70 md:w-80 object-cover rounded-2xl"
-        />
-      </div>
-      <hr />
-      <!-- Alunas -->
-      <div
-        class="max-w-4xl mx-auto flex flex-col items-center text-center gap-7"
-      >
-        <h2 class="text-3xl md:text-5xl font-bold leading-14 md:leading-17">
-          <span class="text-pink-600 text-5xl md:text-7xl font-extrabold"
-            >+3,480</span
-          ><br />ALUNAS
-        </h2>
-        <img src="/src/images/alunas.png" alt="" class="md:w-3xl" />
-        <p class="text-3xl md:text-5xl font-extrabold leading-14 md:leading-17">
-          A ACADEMIA DE CROCHÊ FOI
-          <span class="text-pink-600">CRIADA PARA:</span>
-        </p>
-        <ul class="text-start space-y-1">
-          <li class="flex items-start border-b-1 border-gray-300 rounded-b-lg">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              class="size-6 text-green-500"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="m4.5 12.75 6 6 9-13.5"
-              />
-            </svg>
-            <span>
-              <strong>Pessoas em busca de renda extra:</strong> Uma oportunidade
-              acessível para lucrar com crochê.</span
-            >
-          </li>
-          <li class="flex items-start border-b-1 border-gray-300 rounded-b-lg">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              class="size-6 text-green-500"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="m4.5 12.75 6 6 9-13.5"
-              />
-            </svg>
-            <span
-              ><strong>Quem quer aprender crochê:</strong> Ótimo para iniciantes
-              que buscam instruções práticas e receitas variadas.</span
-            >
-          </li>
-          <li class="flex items-start border-b-1 border-gray-300 rounded-b-lg">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              class="size-6 text-green-500"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="m4.5 12.75 6 6 9-13.5"
-              />
-            </svg>
-            <span
-              ><strong>Profissionais da área:</strong>
-              <em>
-                Amplie sua oferta com produtos únicos que encantam os
-                clientes.</em
-              ></span
-            >
-          </li>
-          <li class="flex items-start">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              class="size-6 text-green-500"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="m4.5 12.75 6 6 9-13.5"
-              />
-            </svg>
-            <span
-              ><strong> Quem procura um hobby terapêutico:</strong> Combina
-              criatividade com relaxamento e bem-estar.</span
-            >
-          </li>
-        </ul>
-        <a
-          href=""
-          class="bg-green-500 text-xl font-bold text-white rounded-lg border-black border-2 px-12 py-4 hover:bg-green-700 transition"
-          >QUERO APROVEITAR</a
-        >
-      </div>
-      <!-- Produtos -->
-      <div
-        class="max-w-full mx-auto flex flex-col items-center text-center gap-7 text-white bg-black rounded-2xl py-8 px-6"
-      >
-        <h2 class="text-3xl md:text-5xl font-extrabold">
-          ALGUMAS RECEITAS QUE VOCÊ
-          <span class="text-yellow-300">VAI RECEBER:</span>
-        </h2>
-        <p class="text-xl max-w-4xl">
-          <strong>Você terá acesso a aulas em vídeo exclusivas,</strong>
-          mostrando o passo a passo para criar peças lucrativas de crochê,
-          <em class="underline">mesmo que esteja começando do zero!</em>
-        </p>
-        <div class="container grid grid-cols-2 md:grid-cols-3 gap-8">
-          <img
-            src="/src/images/produtos/bolsa-clutch-de-croche-fio-nautico-com-corrente-acrilica-luxo.webp"
-            alt=""
-            class="w-80 rounded-lg"
-          />
-          <img
-            src="/src/images/produtos/bolsa-croche-moderno-fio-de-malha-e-alca-de-madeira-pequena-bolsa-artesanal.jpg"
-            alt=""
-            class="w-80 rounded-lg"
-          />
-          <img
-            src="/src/images/produtos/bolsa-de-croche-bolsa-de-croche.jpg"
-            alt=""
-            class="w-80 rounded-lg"
-          />
-          <img
-            src="/src/images/produtos/bolsa-de-croche-em-fio-de-malha-bolsa-pequena.jpg"
-            alt=""
-            class="w-80 rounded-lg"
-          />
-          <img
-            src="/src/images/produtos/bolsa-de-croche-fio-de-malha-praiana.webp"
-            alt=""
-            class="w-80 rounded-lg"
-          /><img
-            src="/src/images/produtos/Galerias-1.webp"
-            alt=""
-            class="w-80 rounded-lg"
-          />
-          <img
-            src="/src/images/produtos/insta-bolsa.jpg"
-            alt=""
-            class="w-80 rounded-lg"
-          />
-          <img
-            src="/src/images/produtos/E-MUITO-MAIS-1024x1024.png"
-            alt=""
-            class="w-80 rounded-lg"
-          />
-        </div>
-        <a
-          href=""
-          class="bg-green-500 text-xl font-bold text-white rounded-lg border-black border-2 px-12 py-4 hover:bg-green-700 transition"
-          >QUERO APROVEITAR</a
-        >
-        <p class="text-xl max-w-4xl">
-          Seguindo o curso, <strong>você NÃO precisa de:</strong> experiência,
-          materiais caros ou passar horas trabalhando
-        </p>
-      </div>
-      <!-- Presente -->
-      <div
-        class="max-w-4xl mx-auto flex flex-col items-center text-center gap-11"
-      >
-        <img src="/src/images/presente.png" alt="" class="max-w-40" />
-        <div class="">
-          <h2 class="text-3xl md:text-5xl font-bold">
-            PRESENTE ESPECIAL DE
-            <span class="text-pink-500">BOAS VINDAS...</span>
-          </h2>
-          <p class="text-xl max-w-4xl">
-            <strong class="underline">Bônus Exclusivo</strong> Na Sua Primeira
-            Compra
-          </p>
-        </div>
-        <h3 class="text-3xl md:text-5xl font-bold text-red-500">
-          (SOMENTE NESSA PÁGINA!)
-        </h3>
+  <body class="bg-pink-50 text-gray-800">
+    <main>
+      <section id="hero" class="py-16 px-4">
         <div
-          class="border-dashed border-red-500 border-4 w-full flex flex-col justify-center items-center p-4 gap-8"
+          class="max-w-4xl mx-auto flex flex-col items-center text-center gap-10"
         >
-          <img src="/src/images/livro.png" alt="" />
           <div>
-            <p class="font-bold text-2xl">
-              BÔNUS <span class="text-pink-500">LIBERADO</span>
+            <h1 class="text-3xl md:text-5xl font-extrabold leading-tight">
+              <span class="text-pink-600"
+                >A MAIOR BIBLIOTECA DE CROCHÊ DO BRASIL</span
+              >
+              - MAIS DE 2.500 RECEITAS LUCRATIVAS EM UM ÚNICO LUGAR
+            </h1>
+            <p
+              class="mt-4 text-lg md:text-2xl font-bold text-gray-700 max-w-3xl mx-auto"
+            >
+              Transforme crochê em renda extra ou sua principal fonte de ganhos
+              com bolsas, roupas, amigurumis, biquínis, decoração e muito mais.
+              Tudo passo a passo, pronto para você aplicar ainda hoje.
             </p>
-            <p>Como ler receitas e gráficos para iniciantes</p>
           </div>
-          <div class="self-start flex flex-col gap-2">
-            <p class="line-through text-red-500 font-bold text-3xl">
-              De: R$39,90
-            </p>
-            <p class="text-green-500 font-bold text-3xl">Por: Grátis</p>
-          </div>
-        </div>
-      </div>
-      <!-- Adquira -->
-      <div
-        class="max-w-4xl mx-auto flex flex-col items-center text-center gap-11"
-      >
-        <h2
-          class="text-3xl md:text-3xl font-bold border-b-pink-500 border-b-2 rounded-b-lg pb-1"
-        >
-          ADQUIRA HOJE MESMO
-        </h2>
-        <ul class="text-start space-y-3">
-          <li
-            class="flex items-start border-b-1 border-gray-300 rounded-b-lg space-x-2"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              class="size-7 text-green-500"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z"
-                clip-rule="evenodd"
-              />
-            </svg>
 
-            <span><strong>100 Bolsas de Crochê Lucrativas</strong></span>
-          </li>
-          <li
-            class="flex items-start border-b-1 border-gray-300 rounded-b-lg space-x-2"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              class="size-7 text-green-500"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z"
-                clip-rule="evenodd"
-              />
-            </svg>
-            <span><strong>Certificado Incluso</strong></span>
-          </li>
-          <li
-            class="flex items-start border-b-1 border-gray-300 rounded-b-lg space-x-2"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              class="size-7 text-green-500"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z"
-                clip-rule="evenodd"
-              />
-            </svg>
-            <span><strong>Acesso vitalício</strong></span>
-          </li>
-          <li
-            class="flex items-start border-b-1 border-gray-300 rounded-b-lg space-x-2"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              class="size-7 text-green-500"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z"
-                clip-rule="evenodd"
-              />
-            </svg>
-            <span><strong>30 Dias de Garantia</strong></span>
-          </li>
-          <li
-            class="flex items-start border-b-1 border-gray-300 rounded-b-lg space-x-2"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              class="size-6 text-pink-500"
-            >
-              <path
-                d="M9.375 3a1.875 1.875 0 0 0 0 3.75h1.875v4.5H3.375A1.875 1.875 0 0 1 1.5 9.375v-.75c0-1.036.84-1.875 1.875-1.875h3.193A3.375 3.375 0 0 1 12 2.753a3.375 3.375 0 0 1 5.432 3.997h3.943c1.035 0 1.875.84 1.875 1.875v.75c0 1.036-.84 1.875-1.875 1.875H12.75v-4.5h1.875a1.875 1.875 0 1 0-1.875-1.875V6.75h-1.5V4.875C11.25 3.839 10.41 3 9.375 3ZM11.25 12.75H3v6.75a2.25 2.25 0 0 0 2.25 2.25h6v-9ZM12.75 12.75v9h6.75a2.25 2.25 0 0 0 2.25-2.25v-6.75h-9Z"
-              />
-            </svg>
-
-            <span
-              ><strong>Bônus Exclusivo:</strong> Como ler receitas e gráficos
-              para iniciantes</span
-            >
-          </li>
-          <li
-            class="flex items-start border-b-1 border-gray-300 rounded-b-lg space-x-2"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              class="size-6 text-pink-500"
-            >
-              <path
-                d="M9.375 3a1.875 1.875 0 0 0 0 3.75h1.875v4.5H3.375A1.875 1.875 0 0 1 1.5 9.375v-.75c0-1.036.84-1.875 1.875-1.875h3.193A3.375 3.375 0 0 1 12 2.753a3.375 3.375 0 0 1 5.432 3.997h3.943c1.035 0 1.875.84 1.875 1.875v.75c0 1.036-.84 1.875-1.875 1.875H12.75v-4.5h1.875a1.875 1.875 0 1 0-1.875-1.875V6.75h-1.5V4.875C11.25 3.839 10.41 3 9.375 3ZM11.25 12.75H3v6.75a2.25 2.25 0 0 0 2.25 2.25h6v-9ZM12.75 12.75v9h6.75a2.25 2.25 0 0 0 2.25-2.25v-6.75h-9Z"
-              />
-            </svg>
-            <span><strong>Bônus Extra:</strong> Vídeo aulas e Tutoriais.</span>
-          </li>
-          <li
-            class="flex items-start border-b-1 border-gray-300 rounded-b-lg space-x-2"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              class="size-6 text-pink-500"
-            >
-              <path
-                d="M9.375 3a1.875 1.875 0 0 0 0 3.75h1.875v4.5H3.375A1.875 1.875 0 0 1 1.5 9.375v-.75c0-1.036.84-1.875 1.875-1.875h3.193A3.375 3.375 0 0 1 12 2.753a3.375 3.375 0 0 1 5.432 3.997h3.943c1.035 0 1.875.84 1.875 1.875v.75c0 1.036-.84 1.875-1.875 1.875H12.75v-4.5h1.875a1.875 1.875 0 1 0-1.875-1.875V6.75h-1.5V4.875C11.25 3.839 10.41 3 9.375 3ZM11.25 12.75H3v6.75a2.25 2.25 0 0 0 2.25 2.25h6v-9ZM12.75 12.75v9h6.75a2.25 2.25 0 0 0 2.25-2.25v-6.75h-9Z"
-              />
-            </svg>
-            <span
-              ><strong>Grupo de Alunos:</strong> Grupo de Alunos Para Suporte e
-              Trocas de Dicas e Experiências</span
-            >
-          </li>
-          <li
-            class="flex items-start border-b-1 border-gray-300 rounded-b-lg space-x-2"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              class="size-6 text-pink-500"
-            >
-              <path
-                d="M9.375 3a1.875 1.875 0 0 0 0 3.75h1.875v4.5H3.375A1.875 1.875 0 0 1 1.5 9.375v-.75c0-1.036.84-1.875 1.875-1.875h3.193A3.375 3.375 0 0 1 12 2.753a3.375 3.375 0 0 1 5.432 3.997h3.943c1.035 0 1.875.84 1.875 1.875v.75c0 1.036-.84 1.875-1.875 1.875H12.75v-4.5h1.875a1.875 1.875 0 1 0-1.875-1.875V6.75h-1.5V4.875C11.25 3.839 10.41 3 9.375 3ZM11.25 12.75H3v6.75a2.25 2.25 0 0 0 2.25 2.25h6v-9ZM12.75 12.75v9h6.75a2.25 2.25 0 0 0 2.25-2.25v-6.75h-9Z"
-              />
-            </svg>
-            <span
-              ><strong>Suporte VIP:</strong> Ganhe um Acompanhamento Individual
-              via WhatsApp por 90 Dias</span
-            >
-          </li>
-        </ul>
-        <div
-          class="mx-auto max-w-4xl border-dashed border-2 bg-gray-100 border-green-300 shadow-2xl shadow-green-300 p-10 flex flex-col gap-5 items-center"
-        >
           <img
             src="/src/images/capa-landing.jpg"
-            alt=""
-            class="md:w-xs shadow-md"
+            alt="Colagem de diversas bolsas e peças de crochê coloridas."
+            class="w-full rounded-2xl shadow-xl"
           />
-          <p class="bg-red-500 text-white w-full">
-            <strong>ÚLTIMO DIA: <span id="data-atual-2"></span></strong>
-          </p>
-          <p class="text-3xl md:max-w-70">
-            <strong>Adquira o seu acesso agora mesmo!</strong>
-          </p>
-          <span class="text-green-500 text-7xl font-extrabold">R$10</span>
-          <a
-            href=""
-            class="bg-green-500 text-xl font-bold text-white rounded-full border-black border-2 px-12 py-4 hover:bg-green-700 transition"
-            >SIM! QUERO MEU ACESSO</a
-          >
-          <img src="/src/images/site-seguro.webp" alt="" class="md:w-xs" />
-          <p class="text-lg md:w-xs">
-            <strong>APROVEITE AGORA:</strong> Você <u>NÃO vai encontrar</u> esse
-            preço depois.
-          </p>
+
+          <div class="flex flex-col items-center gap-6">
+            <p class="font-extrabold text-2xl leading-relaxed">
+              <span class="text-red-600 line-through">DE R$79,90</span> <br />
+              POR APENAS <br />
+              <span class="text-green-500 text-7xl font-extrabold">R$10</span>
+            </p>
+            <a
+              href="#"
+              class="bg-green-500 text-xl font-bold text-white rounded-lg px-12 py-4 hover:bg-green-600 transition-colors duration-300 shadow-lg transform hover:scale-105"
+            >
+              QUERO APROVEITAR A OFERTA
+            </a>
+          </div>
         </div>
-      </div>
+      </section>
+
+      <section id="garantia" class="py-16 px-4 bg-white">
+        <div
+          class="max-w-4xl mx-auto flex flex-col items-center text-center gap-8"
+        >
+          <p class="font-bold text-lg">
+            PROMOÇÃO VÁLIDA ATÉ AS 23:59 DE HOJE:
+            <span id="data-atual" class="text-pink-600 underline"></span>
+          </p>
+          <img
+            src="/src/images/site-seguro.webp"
+            alt="Selo de site seguro com ícones de cadeado, compra protegida e privacidade."
+            class="w-full max-w-md rounded-2xl"
+          />
+          <img
+            src="/src/images/selo-garantia.webp"
+            alt="Selo de garantia de 30 dias para sua satisfação."
+            class="w-full max-w-xs"
+          />
+        </div>
+      </section>
+
+      <section id="publico-alvo" class="py-16 px-4">
+        <div
+          class="max-w-4xl mx-auto flex flex-col items-center text-center gap-10"
+        >
+          <h2 class="text-4xl md:text-5xl font-bold leading-tight">
+            <span class="text-pink-600 text-5xl md:text-7xl font-extrabold"
+              >+3,480</span
+            ><br />ALUNAS SATISFEITAS
+          </h2>
+          <img
+            src="/src/images/alunas.png"
+            alt="Depoimentos e fotos de alunas da Academia de Crochê."
+            class="w-full max-w-2xl"
+          />
+          <h3 class="text-3xl md:text-4xl font-extrabold">
+            A ACADEMIA DE CROCHÊ FOI
+            <span class="text-pink-600">CRIADA PARA VOCÊ:</span>
+          </h3>
+          <ul class="text-start space-y-4 max-w-2xl">
+            <li class="flex items-start gap-3">
+              <svg
+                class="flex-shrink-0 size-6 text-green-500 mt-1"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m4.5 12.75 6 6 9-13.5"
+                />
+              </svg>
+              <span
+                ><strong>Pessoas em busca de renda extra:</strong> Uma
+                oportunidade acessível para lucrar com crochê.</span
+              >
+            </li>
+            <li class="flex items-start gap-3">
+              <svg
+                class="flex-shrink-0 size-6 text-green-500 mt-1"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m4.5 12.75 6 6 9-13.5"
+                />
+              </svg>
+              <span
+                ><strong>Quem quer aprender crochê:</strong> Ótimo para
+                iniciantes que buscam instruções práticas e receitas
+                variadas.</span
+              >
+            </li>
+            <li class="flex items-start gap-3">
+              <svg
+                class="flex-shrink-0 size-6 text-green-500 mt-1"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m4.5 12.75 6 6 9-13.5"
+                />
+              </svg>
+              <span
+                ><strong>Profissionais da área:</strong> Amplie sua oferta com
+                produtos únicos que encantam os clientes.</span
+              >
+            </li>
+            <li class="flex items-start gap-3">
+              <svg
+                class="flex-shrink-0 size-6 text-green-500 mt-1"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m4.5 12.75 6 6 9-13.5"
+                />
+              </svg>
+              <span
+                ><strong>Quem procura um hobby terapêutico:</strong> Combina
+                criatividade com relaxamento e bem-estar.</span
+              >
+            </li>
+          </ul>
+          <a
+            href="#"
+            class="bg-green-500 text-xl font-bold text-white rounded-lg px-12 py-4 hover:bg-green-600 transition-colors duration-300 shadow-lg transform hover:scale-105"
+          >
+            QUERO ENTRAR PARA A ACADEMIA
+          </a>
+        </div>
+      </section>
+
+      <section id="receitas" class="bg-gray-900 text-white py-16 px-4">
+        <div
+          class="max-w-6xl mx-auto flex flex-col items-center text-center gap-10"
+        >
+          <h2 class="text-3xl md:text-5xl font-extrabold">
+            ALGUMAS RECEITAS QUE VOCÊ
+            <span class="text-yellow-300">VAI RECEBER:</span>
+          </h2>
+          <p class="text-xl max-w-3xl">
+            <strong>Você terá acesso a aulas em vídeo exclusivas,</strong>
+            mostrando o passo a passo para criar peças lucrativas de crochê,
+            <em class="underline">mesmo que esteja começando do zero!</em>
+          </p>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <img
+              src="/src/images/produtos/bolsa-clutch-de-croche-fio-nautico-com-corrente-acrilica-luxo.webp"
+              alt="Bolsa clutch de crochê com fio náutico."
+              class="w-full h-full object-cover rounded-lg aspect-square"
+            />
+            <img
+              src="/src/images/produtos/bolsa-croche-moderno-fio-de-malha-e-alca-de-madeira-pequena-bolsa-artesanal.jpg"
+              alt="Bolsa de crochê moderno com alça de madeira."
+              class="w-full h-full object-cover rounded-lg aspect-square"
+            />
+            <img
+              src="/src/images/produtos/bolsa-de-croche-bolsa-de-croche.jpg"
+              alt="Bolsa de crochê tradicional."
+              class="w-full h-full object-cover rounded-lg aspect-square"
+            />
+            <img
+              src="/src/images/produtos/bolsa-de-croche-em-fio-de-malha-bolsa-pequena.jpg"
+              alt="Bolsa pequena de crochê com fio de malha."
+              class="w-full h-full object-cover rounded-lg aspect-square"
+            />
+            <img
+              src="/src/images/produtos/bolsa-de-croche-fio-de-malha-praiana.webp"
+              alt="Bolsa de crochê estilo praiana."
+              class="w-full h-full object-cover rounded-lg aspect-square"
+            />
+            <img
+              src="/src/images/produtos/Galerias-1.webp"
+              alt="Variedade de peças de crochê."
+              class="w-full h-full object-cover rounded-lg aspect-square"
+            />
+            <img
+              src="/src/images/produtos/insta-bolsa.jpg"
+              alt="Bolsa de crochê popular no Instagram."
+              class="w-full h-full object-cover rounded-lg aspect-square"
+            />
+            <img
+              src="/src/images/produtos/E-MUITO-MAIS-1024x1024.png"
+              alt="Texto 'E muito mais' sobre uma colagem de produtos."
+              class="w-full h-full object-cover rounded-lg aspect-square"
+            />
+          </div>
+          <a
+            href="#"
+            class="bg-green-500 text-xl font-bold text-white rounded-lg px-12 py-4 hover:bg-green-600 transition-colors duration-300 shadow-lg transform hover:scale-105"
+          >
+            QUERO VER TODAS AS RECEITAS
+          </a>
+        </div>
+      </section>
+
+      <section id="bonus" class="py-16 px-4">
+        <div
+          class="max-w-4xl mx-auto flex flex-col items-center text-center gap-10"
+        >
+          <img
+            src="/src/images/presente.png"
+            alt="Ícone de um presente."
+            class="w-full max-w-40"
+          />
+          <div>
+            <h2 class="text-3xl md:text-5xl font-bold">
+              PRESENTE ESPECIAL DE
+              <span class="text-pink-500">BOAS VINDAS...</span>
+            </h2>
+            <p class="mt-2 text-xl">
+              <strong class="underline">Bônus Exclusivo</strong> na Sua Primeira
+              Compra
+            </p>
+          </div>
+          <h3 class="text-3xl md:text-5xl font-bold text-red-500">
+            (SOMENTE NESTA PÁGINA!)
+          </h3>
+          <div
+            class="border-dashed border-red-500 border-4 w-full flex flex-col md:flex-row text-start items-center p-6 gap-8 rounded-lg"
+          >
+            <img
+              src="/src/images/livro.png"
+              alt="Capa do e-book 'Como ler receitas e gráficos para iniciantes'."
+              class="w-full max-w-xs md:max-w-52"
+            />
+            <div class="flex flex-col justify-between w-full gap-4">
+              <div>
+                <p
+                  class="font-bold text-xl bg-pink-200 text-pink-700 inline-block px-3 py-1 rounded"
+                >
+                  BÔNUS LIBERADO
+                </p>
+                <p class="mt-2 text-2xl font-bold">
+                  Como ler receitas e gráficos para iniciantes
+                </p>
+              </div>
+              <div>
+                <p class="line-through text-red-500 font-bold text-2xl">
+                  De: R$39,90
+                </p>
+                <p class="text-green-500 font-bold text-4xl">Por: Grátis!</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="oferta-final" class="py-16 px-4">
+        <div
+          class="max-w-4xl mx-auto flex flex-col items-center text-center gap-10"
+        >
+          <h2 class="text-3xl font-bold border-b-pink-500 border-b-4 pb-2">
+            ADQUIRA HOJE O ACESSO COMPLETO
+          </h2>
+          <div
+            class="grid md:grid-cols-2 gap-x-8 gap-y-4 text-start w-full max-w-3xl"
+          >
+            <div class="flex items-start gap-3">
+              <svg
+                class="flex-shrink-0 size-7 text-green-500 mt-1"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+              <span
+                ><strong>+2.500 Receitas Lucrativas</strong> (Bolsas, Roupas,
+                Amigurumis e mais)</span
+              >
+            </div>
+            <div class="flex items-start gap-3">
+              <svg
+                class="flex-shrink-0 size-7 text-green-500 mt-1"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+              <span><strong>Certificado de Conclusão Incluso</strong></span>
+            </div>
+            <div class="flex items-start gap-3">
+              <svg
+                class="flex-shrink-0 size-7 text-green-500 mt-1"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+              <span><strong>Acesso Vitalício e Imediato</strong></span>
+            </div>
+            <div class="flex items-start gap-3">
+              <svg
+                class="flex-shrink-0 size-7 text-green-500 mt-1"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+              <span><strong>30 Dias de Garantia Incondicional</strong></span>
+            </div>
+            <div class="flex items-start gap-3 col-span-1 md:col-span-2">
+              <svg
+                class="flex-shrink-0 size-7 text-pink-500 mt-1"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M9.375 3a1.875 1.875 0 000 3.75h1.875v4.5H3.375A1.875 1.875 0 011.5 9.375v-.75c0-1.036.84-1.875 1.875-1.875h3.193A3.375 3.375 0 0112 2.753a3.375 3.375 0 015.432 3.997h3.943c1.035 0 1.875.84 1.875 1.875v.75c0-1.036-.84-1.875-1.875-1.875H12.75v-4.5h1.875a1.875 1.875 0 10-1.875-1.875V6.75h-1.5V4.875C11.25 3.839 10.41 3 9.375 3ZM11.25 12.75H3v6.75a2.25 2.25 0 002.25 2.25h6v-9ZM12.75 12.75v9h6.75a2.25 2.25 0 002.25-2.25v-6.75h-9Z"
+                />
+              </svg>
+              <span
+                ><strong>Todos os Bônus Inclusos:</strong> E-book de Gráficos,
+                Vídeo Aulas, Grupo de Alunas e Suporte VIP.</span
+              >
+            </div>
+          </div>
+          <div
+            class="w-full max-w-2xl border-dashed border-2 bg-gray-100 border-green-400 shadow-2xl shadow-green-200 p-8 flex flex-col gap-5 items-center rounded-lg mt-6"
+          >
+            <img
+              src="/src/images/capa-landing.jpg"
+              alt="Colagem de diversas bolsas e peças de crochê coloridas."
+              class="w-full max-w-xs shadow-md rounded-lg"
+            />
+            <p class="bg-red-500 text-white font-bold w-full py-2 px-4 rounded">
+              OFERTA ENCERRA HOJE: <span id="data-atual-2"></span>
+            </p>
+            <p class="text-2xl font-bold">Adquira o seu acesso agora mesmo!</p>
+            <span class="text-green-500 text-7xl font-extrabold">R$10</span>
+            <a
+              href="#"
+              class="bg-green-500 text-xl font-bold text-white rounded-full px-12 py-4 hover:bg-green-600 transition-colors duration-300 shadow-lg transform hover:scale-105"
+            >
+              SIM! QUERO MEU ACESSO VITALÍCIO
+            </a>
+            <img
+              src="/src/images/site-seguro.webp"
+              alt="Selo de site seguro com ícones de cadeado, compra protegida e privacidade."
+              class="w-full max-w-xs"
+            />
+            <p class="text-md">
+              <strong>APROVEITE AGORA:</strong> Você
+              <u>NÃO vai encontrar</u> esse preço depois.
+            </p>
+          </div>
+        </div>
+      </section>
     </main>
   </body>
 </html>
