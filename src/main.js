@@ -19,34 +19,39 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   //-----------------------------------------------------
-  // CÓDIGO DO TIMER DE CONTAGEM REGRESSIVA
+  // CÓDIGO DO TIMER DE CONTAGEM REGRESSIVA DE 15 MINUTOS
   //-----------------------------------------------------
   const countdownElement = document.getElementById("countdown-timer");
   if (countdownElement) {
-    const interval = setInterval(() => {
-      const now = new Date();
-      const midnight = new Date(
-        now.getFullYear(),
-        now.getMonth(),
-        now.getDate() + 1
-      );
-      const diff = midnight - now;
+    let countdownEndTime = localStorage.getItem("countdownEndTime");
 
+    // Se não houver um tempo final salvo ou se o tempo já expirou, cria um novo.
+    if (!countdownEndTime || new Date().getTime() > countdownEndTime) {
+      const fifteenMinutesFromNow = new Date().getTime() + 15 * 60 * 1000;
+      localStorage.setItem("countdownEndTime", fifteenMinutesFromNow);
+      countdownEndTime = fifteenMinutesFromNow;
+    }
+
+    const interval = setInterval(() => {
+      const now = new Date().getTime();
+      const diff = countdownEndTime - now;
+
+      // Se o tempo acabou
       if (diff <= 0) {
-        countdownElement.innerHTML = "00h 00m 00s";
+        countdownElement.innerHTML = "00:00";
         clearInterval(interval);
         return;
       }
 
-      const hours = Math.floor(
-        (diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-      );
+      // Calcula os minutos e segundos restantes
       const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
       const seconds = Math.floor((diff % (1000 * 60)) / 1000);
 
-      countdownElement.innerHTML = `${String(hours).padStart(2, "0")}h ${String(
-        minutes
-      ).padStart(2, "0")}m ${String(seconds).padStart(2, "0")}s`;
+      // Exibe no formato MM:SS
+      countdownElement.innerHTML = `${String(minutes).padStart(
+        2,
+        "0"
+      )}:${String(seconds).padStart(2, "0")}`;
     }, 1000);
   }
 
@@ -78,8 +83,6 @@ document.addEventListener("DOMContentLoaded", () => {
   //-----------------------------------------------------
   // CARROSSEL DE VÍDEO COM AUTOPLAY INTELIGENTE
   //-----------------------------------------------------
-
-  // CORREÇÃO: Declaramos a variável de visibilidade ANTES de o Swiper ser criado.
   let isCarouselVisible = false;
 
   const videoSwiper = new Swiper(".videoSwiper", {
