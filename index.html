@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Academia do Crochê - A Maior Biblioteca de Receitas do Brasil</title>
-
     <link rel="icon" type="image/png" href="/src/images/favicon.png" />
     <meta
       property="og:title"
@@ -14,8 +13,15 @@
       property="og:description"
       content="Transforme crochê em renda com mais de 2.500 receitas lucrativas. Kits a partir de R$10!"
     />
-    <meta property="og:image" content="/src/images/capa-landing.jpg" />
+    <meta property="og:image" content="/src/images/capa_principal.jpg" />
     <meta property="og:type" content="website" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap"
+      rel="stylesheet"
+    />
 
     <link rel="stylesheet" href="/src/style.css" />
     <link
@@ -28,7 +34,14 @@
       defer
     ></script>
     <script type="module" src="/src/main.js" defer></script>
+
+    <style>
+      body {
+        font-family: "Montserrat", sans-serif;
+      }
+    </style>
   </head>
+
   <body class="bg-pink-50 text-gray-800">
     <main>
       <section id="venda-imediata" class="py-16 px-4">
@@ -39,10 +52,10 @@
             <span class="text-pink-600"
               >A MAIOR BIBLIOTECA DE CROCHÊ DO BRASIL</span
             >
-            - Mais de 2.500 Receitas Lucrativas em Um Único Lugar
+            - MAIS DE 2.500 RECEITAS LUCRATIVAS EM UM ÚNICO LUGAR
           </h1>
           <img
-            src="/src/images/capa-landing.jpg"
+            src="/src/images/capa_principal.jpg"
             alt="Colagem de diversas bolsas e peças de crochê coloridas."
             class="w-full rounded-2xl shadow-xl mt-4"
           />
@@ -52,11 +65,19 @@
             Transforme crochê em renda extra ou sua principal fonte de ganhos
             com bolsas, roupas, amigurumis e muito mais.
           </p>
-          <a
-            href="#planos"
-            class="bg-green-500 text-xl font-bold text-white rounded-lg px-12 py-4 hover:bg-green-600 transition-colors duration-300 shadow-lg transform hover:scale-105"
-            >QUERO MEU ACESSO A PARTIR DE R$10</a
-          >
+
+          <div class="w-full flex flex-col items-center gap-4">
+            <a
+              href="#planos"
+              class="w-full max-w-md bg-green-500 text-xl font-bold text-white rounded-lg px-12 py-4 hover:bg-green-600 transition-colors duration-300 shadow-lg transform hover:scale-105"
+              >QUERO MEU ACESSO A PARTIR DE R$10</a
+            >
+            <img
+              src="/src/images/site-seguro.webp"
+              alt="Pagamento seguro com cartões de crédito e garantia."
+              class="w-full max-w-xs"
+            />
+          </div>
         </div>
       </section>
 
@@ -67,12 +88,13 @@
           <h2 class="text-3xl md:text-4xl font-bold">
             VEJA NA PRÁTICA UM POUCO DO QUE VOCÊ VAI RECEBER
           </h2>
-          <div class="grid grid-cols-2 md:grid-cols-4 gap-8 items-center">
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4 items-center">
             <img
               src="/src/images/produtos/Galerias-1.webp"
               alt="Páginas de exemplo do material de crochê"
               class="rounded-lg shadow-lg"
-            /><img
+            />
+            <img
               src="/src/images/produtos/bolsa-de-croche-bolsa-de-croche.jpg"
               alt="Exemplo de bolsa de crochê ensinada no curso"
               class="rounded-lg shadow-lg"
@@ -84,7 +106,7 @@
             />
             <img
               src="/src/images/produtos/E-MUITO-MAIS-1024x1024.png"
-              alt="Exemplo de bolsa de crochê ensinada no curso"
+              alt="Texto 'E muito mais' sobre uma colagem de produtos"
               class="rounded-lg shadow-lg"
             />
           </div>
@@ -237,11 +259,19 @@
             id="countdown-timer"
             class="text-4xl font-bold text-yellow-300"
           ></div>
-          <a
-            href="#planos"
-            class="bg-green-500 text-xl font-bold text-white rounded-lg px-12 py-4 hover:bg-green-600 transition-colors duration-300 shadow-lg transform hover:scale-105 mt-4"
-            >QUERO ADQUIRIR COM DESCONTO</a
-          >
+
+          <div class="w-full flex flex-col items-center gap-4 mt-4">
+            <a
+              href="#planos"
+              class="w-full max-w-md bg-green-500 text-xl font-bold text-white rounded-lg px-12 py-4 hover:bg-green-600 transition-colors duration-300 shadow-lg transform hover:scale-105"
+              >QUERO ADQUIRIR COM DESCONTO</a
+            >
+            <img
+              src="/src/images/site-seguro.webp"
+              alt="Pagamento seguro com cartões de crédito e garantia."
+              class="w-full max-w-xs"
+            />
+          </div>
         </div>
       </section>
 
@@ -345,7 +375,7 @@
             TUDO QUE VOCÊ RECEBE NO ACESSO COMPLETO
           </h2>
           <img
-            src="/src/images/capa-landing.jpg"
+            src="/src/images/capa_principal.jpg"
             alt="Mockup mostrando o conteúdo do kit de crochê em diversos dispositivos"
             class="w-full max-w-3xl rounded-lg shadow-lg"
           />
@@ -355,7 +385,7 @@
             <div class="flex items-start gap-3">
               <svg
                 class="flex-shrink-0 size-7 text-green-500 mt-1"
-                xmlns="http://www.w.org/2000/svg"
+                xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
                 fill="currentColor"
               >
@@ -527,11 +557,18 @@
                   ><span>Pronto para você usar, criar e lucrar 🧶✨</span>
                 </li>
               </ul>
-              <a
-                href="#"
-                class="mt-auto w-full bg-gray-300 text-xl font-bold text-gray-800 rounded-lg px-12 py-4 hover:bg-gray-400 transition-colors duration-300"
-                >ESCOLHER O BÁSICO</a
-              >
+              <div class="w-full flex flex-col items-center gap-4 mt-auto">
+                <a
+                  href="#"
+                  class="w-full bg-gray-300 text-xl font-bold text-gray-800 rounded-lg px-12 py-4 hover:bg-gray-400 transition-colors duration-300"
+                  >ESCOLHER O BÁSICO</a
+                >
+                <img
+                  src="/src/images/site-seguro.webp"
+                  alt="Pagamento seguro com cartões de crédito e garantia."
+                  class="w-full max-w-xs"
+                />
+              </div>
             </div>
             <div
               class="border-4 border-pink-500 rounded-lg p-8 flex flex-col relative"
@@ -639,11 +676,18 @@
                   >
                 </li>
               </ul>
-              <a
-                href="#"
-                class="mt-auto w-full bg-green-500 text-xl font-bold text-white rounded-lg px-12 py-4 hover:bg-green-600 transition-colors duration-300 shadow-lg transform hover:scale-105"
-                >QUERO O KIT PREMIUM</a
-              >
+              <div class="w-full flex flex-col items-center gap-4 mt-auto">
+                <a
+                  href="#"
+                  class="w-full bg-green-500 text-xl font-bold text-white rounded-lg px-12 py-4 hover:bg-green-600 transition-colors duration-300 shadow-lg transform hover:scale-105"
+                  >QUERO O KIT PREMIUM</a
+                >
+                <img
+                  src="/src/images/site-seguro.webp"
+                  alt="Pagamento seguro com cartões de crédito e garantia."
+                  class="w-full max-w-xs"
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -685,11 +729,19 @@
               Clique no botão abaixo para garantir
               <span class="text-red-600">seu acesso com desconto!</span>
             </h4>
-            <a
-              href="#planos"
-              class="mt-6 inline-block bg-green-500 text-xl font-bold text-white rounded-lg px-12 py-4 hover:bg-green-600 transition-colors duration-300 shadow-lg transform hover:scale-105"
-              >QUERO MEU ACESSO AGORA</a
-            >
+
+            <div class="w-full flex flex-col items-center gap-4 mt-6">
+              <a
+                href="#planos"
+                class="w-full max-w-md inline-block bg-green-500 text-xl font-bold text-white rounded-lg px-12 py-4 hover:bg-green-600 transition-colors duration-300 shadow-lg transform hover:scale-105"
+                >QUERO MEU ACESSO AGORA</a
+              >
+              <img
+                src="/src/images/site-seguro.webp"
+                alt="Pagamento seguro com cartões de crédito e garantia."
+                class="w-full max-w-xs"
+              />
+            </div>
           </div>
         </div>
       </section>
