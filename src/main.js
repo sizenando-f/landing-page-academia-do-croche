@@ -1,104 +1,59 @@
-import "./style.css";
-import javascriptLogo from "./javascript.svg";
-import viteLogo from "/vite.svg";
-import { setupCounter } from "./counter.js";
-
-const elementoData = document.getElementById("data-atual");
-
-const hoje = new Date();
-
-const opcoesDeFormato = { day: "2-digit", month: "2-digit", year: "numeric" };
-const dataFormatada = hoje.toLocaleDateString("pt-BR", opcoesDeFormato);
-
-if (elementoData) {
-  elementoData.textContent = dataFormatada;
-}
-
-const elementoData2 = document.getElementById("data-atual-2");
-
-if (elementoData2) {
-  elementoData2.textContent = dataFormatada;
-}
-
-const testimonialSwiper = new Swiper(".testimonialSwiper", {
-  // Ativa o loop, essencial para quando se tem muitos slides
-  loop: true,
-
-  // Configuração para o autoplay (passar sozinho)
-  autoplay: {
-    delay: 3000, // Passa a cada 3 segundos
-    disableOnInteraction: false, // Não para o autoplay se o usuário interagir com as setas
-  },
-
-  // Quantos slides aparecerão ao mesmo tempo (ótimo para responsividade)
-  slidesPerView: 1,
-  spaceBetween: 20, // Espaço entre os slides
-
-  // Define quantos slides mostrar em telas maiores
-  breakpoints: {
-    // A partir de 768px de largura
-    768: {
-      slidesPerView: 2,
-      spaceBetween: 30,
-    },
-    // A partir de 1024px de largura
-    1024: {
-      slidesPerView: 3,
-      spaceBetween: 40,
-    },
-  },
-
-  // Paginação (as bolinhas)
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  },
-
-  // ATIVAÇÃO DAS SETAS (A PARTE NOVA E IMPORTANTE)
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-});
-
 //======================================================================
-// CÓDIGO DO TIMER DE CONTAGEM REGRESSIVA
-//======================================================================
-function startCountdown() {
-  const countdownElement = document.getElementById("countdown-timer");
-  if (!countdownElement) return; // Não faz nada se o elemento não existir
-
-  const interval = setInterval(() => {
-    const now = new Date();
-    const midnight = new Date(
-      now.getFullYear(),
-      now.getMonth(),
-      now.getDate() + 1
-    ); // Meia-noite de hoje
-    const diff = midnight - now;
-
-    if (diff <= 0) {
-      countdownElement.innerHTML = "00h 00m 00s";
-      clearInterval(interval);
-      return;
-    }
-
-    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-
-    countdownElement.innerHTML = `${String(hours).padStart(2, "0")}h ${String(
-      minutes
-    ).padStart(2, "0")}m ${String(seconds).padStart(2, "0")}s`;
-  }, 1000);
-}
-
-//======================================================================
-// INICIALIZAÇÃO DE TUDO QUANDO A PÁGINA CARREGA
+// FUNÇÃO PRINCIPAL QUE RODA QUANDO A PÁGINA TERMINA DE CARREGAR
 //======================================================================
 document.addEventListener("DOMContentLoaded", () => {
-  // Inicializa o carrossel (se você já tiver, não precisa duplicar)
-  const testimonialSwiper = new Swiper(".testimonialSwiper", {
+  //-----------------------------------------------------
+  // LÓGICA PARA EXIBIR A DATA ATUAL
+  //-----------------------------------------------------
+  const hoje = new Date();
+  const opcoesDeFormato = { day: "2-digit", month: "2-digit", year: "numeric" };
+  const dataFormatada = hoje.toLocaleDateString("pt-BR", opcoesDeFormato);
+
+  const elementoData = document.getElementById("data-atual");
+  if (elementoData) {
+    elementoData.textContent = dataFormatada;
+  }
+  const elementoData2 = document.getElementById("data-atual-2");
+  if (elementoData2) {
+    elementoData2.textContent = dataFormatada;
+  }
+
+  //-----------------------------------------------------
+  // CÓDIGO DO TIMER DE CONTAGEM REGRESSIVA
+  //-----------------------------------------------------
+  const countdownElement = document.getElementById("countdown-timer");
+  if (countdownElement) {
+    const interval = setInterval(() => {
+      const now = new Date();
+      const midnight = new Date(
+        now.getFullYear(),
+        now.getMonth(),
+        now.getDate() + 1
+      );
+      const diff = midnight - now;
+
+      if (diff <= 0) {
+        countdownElement.innerHTML = "00h 00m 00s";
+        clearInterval(interval);
+        return;
+      }
+
+      const hours = Math.floor(
+        (diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+      );
+      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+      countdownElement.innerHTML = `${String(hours).padStart(2, "0")}h ${String(
+        minutes
+      ).padStart(2, "0")}m ${String(seconds).padStart(2, "0")}s`;
+    }, 1000);
+  }
+
+  //-----------------------------------------------------
+  // CARROSSEL DE DEPOIMENTOS
+  //-----------------------------------------------------
+  new Swiper(".testimonialSwiper", {
     loop: true,
     autoplay: {
       delay: 3000,
@@ -120,6 +75,80 @@ document.addEventListener("DOMContentLoaded", () => {
     },
   });
 
-  // Inicializa o timer
-  startCountdown();
+  //-----------------------------------------------------
+  // CARROSSEL DE VÍDEO COM AUTOPLAY INTELIGENTE
+  //-----------------------------------------------------
+
+  // CORREÇÃO: Declaramos a variável de visibilidade ANTES de o Swiper ser criado.
+  let isCarouselVisible = false;
+
+  const videoSwiper = new Swiper(".videoSwiper", {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    loop: true,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    on: {
+      init: handleVideoState,
+      slideChange: handleVideoState,
+    },
+  });
+
+  function handleVideoState(swiper) {
+    swiper.slides.forEach((slide) => {
+      const video = slide.querySelector("video");
+      if (video) {
+        video.pause();
+        video.currentTime = 0; // Opcional: reseta o vídeo ao trocar de slide
+      }
+    });
+
+    const activeVideo =
+      swiper.slides[swiper.activeIndex]?.querySelector("video");
+
+    if (activeVideo) {
+      if (isCarouselVisible) {
+        activeVideo.play();
+      }
+
+      activeVideo.addEventListener(
+        "ended",
+        () => {
+          swiper.slideNext();
+        },
+        { once: true }
+      );
+    }
+  }
+
+  const videoSection = document.getElementById("prova-visual");
+
+  if (videoSection) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const activeVideo =
+            videoSwiper.slides[videoSwiper.activeIndex]?.querySelector("video");
+          if (!activeVideo) return;
+
+          if (entry.isIntersecting) {
+            isCarouselVisible = true;
+            activeVideo.play();
+          } else {
+            isCarouselVisible = false;
+            activeVideo.pause();
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    observer.observe(videoSection);
+  }
 });
