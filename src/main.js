@@ -19,13 +19,12 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   //-----------------------------------------------------
-  // CÓDIGO DO TIMER DE CONTAGEM REGRESSIVA DE 15 MINUTOS
+  // CÓDIGO DO TIMER DE CONTAGEM REGRESSIVA
   //-----------------------------------------------------
   const countdownElement = document.getElementById("countdown-timer");
   if (countdownElement) {
     let countdownEndTime = localStorage.getItem("countdownEndTime");
 
-    // Se não houver um tempo final salvo ou se o tempo já expirou, cria um novo.
     if (!countdownEndTime || new Date().getTime() > countdownEndTime) {
       const fifteenMinutesFromNow = new Date().getTime() + 15 * 60 * 1000;
       localStorage.setItem("countdownEndTime", fifteenMinutesFromNow);
@@ -36,18 +35,15 @@ document.addEventListener("DOMContentLoaded", () => {
       const now = new Date().getTime();
       const diff = countdownEndTime - now;
 
-      // Se o tempo acabou
       if (diff <= 0) {
         countdownElement.innerHTML = "00:00";
         clearInterval(interval);
         return;
       }
 
-      // Calcula os minutos e segundos restantes
       const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
       const seconds = Math.floor((diff % (1000 * 60)) / 1000);
 
-      // Exibe no formato MM:SS
       countdownElement.innerHTML = `${String(minutes).padStart(
         2,
         "0"
@@ -108,7 +104,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const video = slide.querySelector("video");
       if (video) {
         video.pause();
-        video.currentTime = 0; // Opcional: reseta o vídeo ao trocar de slide
+        video.currentTime = 0;
       }
     });
 
@@ -154,5 +150,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
     observer.observe(videoSection);
   }
+
+  //-----------------------------------------------------
+  // LÓGICA DE PLAY/PAUSE AO CLICAR NO VÍDEO (NOVA FUNÇÃO)
+  //-----------------------------------------------------
+  const allVideos = document.querySelectorAll(".videoSwiper video");
+  allVideos.forEach((video) => {
+    video.addEventListener("click", () => {
+      if (video.paused) {
+        video.play();
+      } else {
+        video.pause();
+      }
+    });
+  });
 });
-22;
