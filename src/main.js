@@ -164,4 +164,68 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
+
+  //-----------------------------------------------------
+  // LÓGICA DO POP-UP DE PROVA SOCIAL
+  //-----------------------------------------------------
+  const popup = document.getElementById("social-proof-popup");
+  const popupText = document.getElementById("popup-text");
+
+  // Lista de nomes (pode adicionar quantos quiser)
+  const names = [
+    "Julia",
+    "Mariana",
+    "Ana",
+    "Carla",
+    "Fernanda",
+    "Beatriz",
+    "Luiza",
+    "Manuela",
+    "Sofia",
+    "Isabela",
+    "Laura",
+    "Camila",
+    "Gabriela",
+    "Patrícia",
+    "Amanda",
+    "Larissa",
+    "Clara",
+    "Vitória",
+    "Bianca",
+    "Helena",
+  ];
+
+  // Função para mostrar o pop-up
+  function showSocialProof() {
+    // 1. Pega um nome aleatório da lista
+    const randomName = names[Math.floor(Math.random() * names.length)];
+
+    // 2. Atualiza o texto do pop-up
+    popupText.textContent = `${randomName} acabou de comprar!`;
+
+    // 3. Mostra o pop-up com a animação
+    popup.classList.remove("opacity-0", "-translate-y-20");
+    popup.classList.add("opacity-100", "translate-y-0");
+
+    // 4. Define um tempo para esconder o pop-up (3 segundos)
+    setTimeout(() => {
+      popup.classList.remove("opacity-100", "translate-y-0");
+      popup.classList.add("opacity-0", "-translate-y-20");
+
+      // 5. Agenda a próxima aparição
+      scheduleNextPopup();
+    }, 3000); // Tempo que o pop-up fica visível
+  }
+
+  // Função para agendar o próximo pop-up
+  function scheduleNextPopup() {
+    // 6. Define um intervalo aleatório (entre 5 e 20 segundos)
+    const randomInterval =
+      Math.floor(Math.random() * (20000 - 5000 + 1)) + 5000;
+
+    setTimeout(showSocialProof, randomInterval);
+  }
+
+  // Inicia o ciclo (o primeiro pop-up aparecerá após 7 segundos)
+  setTimeout(scheduleNextPopup, 7000);
 });
