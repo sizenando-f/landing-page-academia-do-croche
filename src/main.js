@@ -60,6 +60,12 @@ document.addEventListener("DOMContentLoaded", () => {
     slidesPerView: 1,
     spaceBetween: 20,
 
+    // ADICIONADO AUTOPLAY
+    autoplay: {
+      delay: 4000, // Tempo de 4 segundos (um pouco mais para dar tempo de ler)
+      disableOnInteraction: false, // Continua mesmo se o usuário mexer
+    },
+
     // Mostra mais bônus em telas maiores
     breakpoints: {
       768: { slidesPerView: 2, spaceBetween: 30 },
