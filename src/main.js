@@ -19,37 +19,13 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   //-----------------------------------------------------
-  // CÓDIGO DO TIMER DE CONTAGEM REGRESSIVA
+  // CÓDIGO DO TIMER DE CONTAGEM REGRESSIVA (REMOVIDO DA SEÇÃO URGÊNCIA, CONFORME NOVA COPY)
   //-----------------------------------------------------
-  const countdownElement = document.getElementById("countdown-timer");
-  if (countdownElement) {
-    let countdownEndTime = localStorage.getItem("countdownEndTime");
+  // A nova copy da seção urgência não pede mais um timer de 15 minutos,
+  // então essa lógica foi removida para não dar erro.
+  // Se precisar dela de volta, podemos readicionar.
 
-    if (!countdownEndTime || new Date().getTime() > countdownEndTime) {
-      const fifteenMinutesFromNow = new Date().getTime() + 15 * 60 * 1000;
-      localStorage.setItem("countdownEndTime", fifteenMinutesFromNow);
-      countdownEndTime = fifteenMinutesFromNow;
-    }
-
-    const interval = setInterval(() => {
-      const now = new Date().getTime();
-      const diff = countdownEndTime - now;
-
-      if (diff <= 0) {
-        countdownElement.innerHTML = "00:00";
-        clearInterval(interval);
-        return;
-      }
-
-      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-
-      countdownElement.innerHTML = `${String(minutes).padStart(
-        2,
-        "0"
-      )}:${String(seconds).padStart(2, "0")}`;
-    }, 1000);
-  }
+  // (Lógica do timer de 15min removida)
 
   //-----------------------------------------------------
   // CARROSSEL DE DEPOIMENTOS
@@ -77,92 +53,22 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   //-----------------------------------------------------
-  // CARROSSEL DE VÍDEO COM AUTOPLAY INTELIGENTE
+  // NOVO CARROSSEL DE BÔNUS
   //-----------------------------------------------------
-  let isCarouselVisible = false;
-
-  const videoSwiper = new Swiper(".videoSwiper", {
-    slidesPerView: 1,
-    spaceBetween: 30,
+  new Swiper(".bonusSwiper", {
     loop: true,
+    slidesPerView: 1,
+    spaceBetween: 20,
+
+    // Mostra mais bônus em telas maiores
+    breakpoints: {
+      768: { slidesPerView: 2, spaceBetween: 30 },
+      1024: { slidesPerView: 3, spaceBetween: 30 },
+    },
     pagination: {
       el: ".swiper-pagination",
       clickable: true,
     },
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-    on: {
-      init: handleVideoState,
-      slideChange: handleVideoState,
-    },
-  });
-
-  function handleVideoState(swiper) {
-    swiper.slides.forEach((slide) => {
-      const video = slide.querySelector("video");
-      if (video) {
-        video.pause();
-        video.currentTime = 0;
-      }
-    });
-
-    const activeVideo =
-      swiper.slides[swiper.activeIndex]?.querySelector("video");
-
-    if (activeVideo) {
-      if (isCarouselVisible) {
-        activeVideo.play();
-      }
-
-      activeVideo.addEventListener(
-        "ended",
-        () => {
-          swiper.slideNext();
-        },
-        { once: true }
-      );
-    }
-  }
-
-  const videoSection = document.getElementById("prova-visual");
-
-  if (videoSection) {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          const activeVideo =
-            videoSwiper.slides[videoSwiper.activeIndex]?.querySelector("video");
-          if (!activeVideo) return;
-
-          if (entry.isIntersecting) {
-            isCarouselVisible = true;
-            activeVideo.play();
-          } else {
-            isCarouselVisible = false;
-            activeVideo.pause();
-          }
-        });
-      },
-      { threshold: 0.5 }
-    );
-
-    observer.observe(videoSection);
-  }
-
-  //-----------------------------------------------------
-  // LÓGICA DE PLAY/PAUSE AO CLICAR NO VÍDEO (NOVA FUNÇÃO)
-  //-----------------------------------------------------
-  const allVideos = document.querySelectorAll(".videoSwiper video");
-  allVideos.forEach((video) => {
-    video.addEventListener("click", () => {
-      if (video.paused) {
-        video.play();
-      } else {
-        video.pause();
-      }
-    });
   });
 
   //-----------------------------------------------------
@@ -273,32 +179,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Função para mostrar o pop-up
   function showSocialProof() {
-    // 1. Pega um nome aleatório da lista
-    const randomName = names[Math.floor(Math.random() * names.length)];
+    if (!popup || !popupText) return; // Garante que os elementos existem
 
-    // 2. Atualiza o texto do pop-up
+    const randomName = names[Math.floor(Math.random() * names.length)];
     popupText.textContent = `${randomName} acabou de comprar!`;
 
-    // 3. Mostra o pop-up com a animação
     popup.classList.remove("opacity-0", "-translate-y-20");
     popup.classList.add("opacity-100", "translate-y-0");
 
-    // 4. Define um tempo para esconder o pop-up (3 segundos)
     setTimeout(() => {
       popup.classList.remove("opacity-100", "translate-y-0");
       popup.classList.add("opacity-0", "-translate-y-20");
-
-      // 5. Agenda a próxima aparição
       scheduleNextPopup();
-    }, 3000); // Tempo que o pop-up fica visível
+    }, 3000);
   }
 
   // Função para agendar o próximo pop-up
   function scheduleNextPopup() {
-    // 6. Define um intervalo aleatório (entre 5 e 20 segundos)
     const randomInterval =
       Math.floor(Math.random() * (20000 - 5000 + 1)) + 5000;
-
     setTimeout(showSocialProof, randomInterval);
   }
 
